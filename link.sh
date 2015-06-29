@@ -7,6 +7,7 @@ ln -s "${PWD}/tmux/tmux.conf" $TMUX_CONF
 EMACS_D="${HOME}/.emacs.d"
 rm -f $EMACS_D
 ln -s "${PWD}/emacs/local" $EMACS_D
+ln -s "${PWD}/emacs/config" "${EMACS_D}/config"
 rm "${EMACS_D}/init.el"
 ln -s "${PWD}/emacs/init.el" "${EMACS_D}/init.el"
 
