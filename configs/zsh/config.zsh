@@ -15,4 +15,10 @@ alias glr="git pull --rebase"
 alias grh="git reset --hard" 
 alias gcob="git checkout -b"
 
+# nw
+alias n="nw"
+
+# Just
+alias j="just"
+
 #endregion
