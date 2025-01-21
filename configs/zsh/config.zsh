@@ -25,6 +25,9 @@ alias ghco="gh pr checkout"
 
 # nw
 alias n="nw"
+alias nt="nw test"
+alias ntw="nw test-watch"
+alias nd="nw dev"
 
 # Just
 alias j="just"
