@@ -29,4 +29,12 @@ alias n="nw"
 # Just
 alias j="just"
 
+# pnpm
+alias p="pnpm"
+alias pe="pnpm exec"
+alias pr="pnpm run"
+alias pi="pnpm install"
+alias px="pnpx"
+alias pu='pnpm -F "*" upgrade'
+
 #endregion
