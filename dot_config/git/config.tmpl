@@ -1,0 +1,29 @@
+[user]
+  email = "koss@nocorp.me"
+  name = "Sasha Koss"
+  signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPXEN/PHF+niliKY4hENoZcyuBNYg4o932PnHMTvaVGc"
+
+{{- if and (eq .chezmoi.os "linux") (ne .chezmoi.username "vscode") }}
+[core]
+  sshCommand = "ssh.exe"
+{{- end }}
+
+[gpg]
+  format = "ssh"
+
+[gpg "ssh"]
+  allowedSignersFile = "./allowed_signers"
+  {{- if eq .chezmoi.os "windows" }}
+  program = "C:/Users/koss/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+  {{- else if and (eq .chezmoi.os "linux") (ne .chezmoi.username "vscode") }}
+  program = "/mnt/c/Users/koss/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+  {{- end }}
+
+[commit]
+  gpgsign = true
+
+[init]
+  defaultBranch = "main"
+
+[push]
+  autoSetupRemote = true
