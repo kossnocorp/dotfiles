@@ -17,3 +17,16 @@ if type -q starship
 else
   echo " Starship not found, skipping..."
 end
+
+# Aliases
+
+# Git
+alias gst "git status"
+alias gp "git push"
+alias gl "git pull --rebase"
+alias gc "git commit"
+alias gco "git checkout"
+alias gcob "git checkout -b"
+alias gaa "git add ."
+alias grh "git reset --hard"
+alias gr "git reset HEAD~1"
