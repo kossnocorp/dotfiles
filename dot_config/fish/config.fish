@@ -23,13 +23,20 @@ end
 # Git
 alias gst "git status"
 alias gp "git push"
-alias gl "git pull --rebase"
+alias glr "git pull --rebase"
 alias gc "git commit"
 alias gco "git checkout"
 alias gcob "git checkout -b"
 alias gaa "git add ."
 alias grh "git reset --hard"
-alias gr "git reset HEAD~1"
+alias grs "git reset HEAD~1"
+alias gd "git diff"
+alias gr2 "git rebase -i HEAD~2"
+alias gr3 "git rebase -i HEAD~3"
+alias gr4 "git rebase -i HEAD~4"
+alias gr5 "git rebase -i HEAD~5"
+alias gb "git branch"
+alias gbr "git branch -r"
 
 # pnpm
 alias p "pnpm"
