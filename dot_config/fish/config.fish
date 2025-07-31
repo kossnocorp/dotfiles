@@ -30,3 +30,12 @@ alias gcob "git checkout -b"
 alias gaa "git add ."
 alias grh "git reset --hard"
 alias gr "git reset HEAD~1"
+
+# pnpm
+alias p "pnpm"
+alias pi "pnpm install"
+alias pa "pnpm add"
+alias pad "pnpm add --dev"
+alias pr "pnpm remove"
+alias pe "pnpm exec"
+alias px "pnpx"
