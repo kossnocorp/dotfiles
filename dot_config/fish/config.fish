@@ -46,3 +46,10 @@ alias pad "pnpm add -D"
 alias pr "pnpm remove"
 alias pe "pnpm exec"
 alias px "pnpx"
+
+# mise
+alias m "mise"
+alias mi "mise install"
+alias mu "mise update"
+alias mus "mise self-update"
+alias me "mise exec
