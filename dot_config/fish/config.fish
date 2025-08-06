@@ -38,6 +38,13 @@ alias gr5 "git rebase -i HEAD~5"
 alias gb "git branch"
 alias gbr "git branch -r"
 
+# mise
+alias m "mise"
+alias mi "mise install"
+alias mu "mise update"
+alias mus "mise self-update"
+alias me "mise exec"
+
 # pnpm
 alias p "pnpm"
 alias pi "pnpm install"
@@ -47,9 +54,13 @@ alias pr "pnpm remove"
 alias pe "pnpm exec"
 alias px "pnpx"
 
-# mise
-alias m "mise"
-alias mi "mise install"
-alias mu "mise update"
-alias mus "mise self-update"
-alias me "mise exec
+# Cargo
+alias c "cargo"
+alias ci "cargo install"
+alias ca "cargo add"
+alias cr "cargo remove"
+alias cb "cargo build"
+alias ct "cargo test"
+
+# Chezmoi
+alias du "chezmoi update"
