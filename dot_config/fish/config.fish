@@ -1,3 +1,7 @@
+# Path
+
+fish_add_path "$HOME/.local/bin"
+
 # mise-en-place
 
 if type -q mise
@@ -63,4 +67,4 @@ alias cb "cargo build"
 alias ct "cargo test"
 
 # Chezmoi
-alias du "chezmoi update"
+alias chu "chezmoi update"
