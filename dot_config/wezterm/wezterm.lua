@@ -4,7 +4,8 @@ local config = wezterm.config_builder()
 
 -- Windows
 if string.find(wezterm.target_triple, 'windows') then
-  config.default_prog = { 'powershell' }
+  -- Use Powershell
+  config.default_prog = { 'pwsh.exe' }
 end
 
 return config
