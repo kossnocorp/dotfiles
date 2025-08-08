@@ -6,14 +6,16 @@ local config = wezterm.config_builder()
 if string.find(wezterm.target_triple, 'windows') then
   -- Use Powershell
   config.default_prog = { 'pwsh.exe' }
-
-  -- GUI
-  config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 end
 
 -- GUI
+
+-- Size
 config.initial_cols = 120
 config.initial_rows = 30
+
+-- Window
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
 -- Font
 config.font = wezterm.font('IosevkaTerm NF')
