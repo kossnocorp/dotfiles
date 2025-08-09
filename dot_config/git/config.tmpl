@@ -3,8 +3,10 @@
   name = "Sasha Koss"
   signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPXEN/PHF+niliKY4hENoZcyuBNYg4o932PnHMTvaVGc"
 
-{{- if and (eq .chezmoi.os "linux") (ne .chezmoi.username "vscode") }}
 [core]
+{{- if eq .chezmoi.os "windows" }}
+  sshCommand = "C:/Windows/System32/OpenSSH/ssh.exe"
+{{- else if and (eq .chezmoi.os "linux") (ne .chezmoi.username "vscode") }}
   sshCommand = "ssh.exe"
 {{- end }}
 
