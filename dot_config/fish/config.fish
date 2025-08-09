@@ -2,6 +2,11 @@
 
 fish_add_path "$HOME/.local/bin"
 
+# Homebrew
+if test (uname) = Darwin
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+end
+
 # mise-en-place
 
 if type -q mise
