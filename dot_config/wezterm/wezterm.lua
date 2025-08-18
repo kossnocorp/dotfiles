@@ -18,7 +18,11 @@ config.initial_rows = 30
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
 -- Font
-config.font = wezterm.font('IosevkaTerm NF')
+config.font = wezterm.font_with_fallback {
+  'IosevkaTerm NF',
+  -- macOS/newer? name
+  'IosevkaTerm Nerd Font',
+}
 config.harfbuzz_features = { 'calt', 'ss01' }
 
 return config
