@@ -73,3 +73,6 @@ alias ct "cargo test"
 
 # Chezmoi
 alias chu "chezmoi update"
+
+# Turbo
+alias t "pnpm exec turbo"
