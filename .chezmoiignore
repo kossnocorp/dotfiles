@@ -1,3 +1,2 @@
-.vscode
-legacy
-install.sh
+**/*
+!dot_config/
