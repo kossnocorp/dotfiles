@@ -1,2 +1,19 @@
+# Model
+model = "gpt-5-codex"
+model_reasoning_effort = "high"
+model_reasoning_summary = "detailed"
+
+# Sandbox
+
+sandbox_mode = "workspace-write" # Make cwd writable
+
+[sandbox_workspace_write]
+network_access = true # Allow network access
+
+[shell_environment_policy]
+set = { GIT_CONFIG_GLOBAL = "~/.config/git/agent.config" } # Use agent git config
+
+# Tools
+
 [tools]
-web_search = true
+web_search = true # Allow to google things
