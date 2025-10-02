@@ -1,3 +1,9 @@
+format = '$all$custom$sym'
+
+[custom.agent]
+when = ''' test "$AGENT" = "true" '''
+format = "[󱜙](fg:blue)  "
+
 [aws]
 symbol = "  "
 
