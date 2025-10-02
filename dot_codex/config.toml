@@ -8,7 +8,8 @@ model_reasoning_summary = "detailed"
 sandbox_mode = "workspace-write" # Make cwd writable
 
 [sandbox_workspace_write]
-network_access = true # Allow network access
+network_access = true        # Allow network access
+writable_roots = ["/wrkspc"] # Add dev container workspace dir
 
 [shell_environment_policy]
 # NOTE: Codex doesn't support variable expansion in the config file yet: https://github.com/openai/codex/issues/2680
