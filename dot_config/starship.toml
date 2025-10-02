@@ -15,6 +15,9 @@ format = "[󰆧](fg:red dimmed)  "
 when = ''' test "$AGENT" = "true" '''
 format = "[󱜙](fg:yellow)  "
 
+[container]
+disabled = true
+
 # Nerd Fonts icons:
 
 [aws]
