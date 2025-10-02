@@ -1,4 +1,4 @@
-format = '$all$custom$sym'
+format = '$all$custom'
 
 [custom.agent]
 when = ''' test "$AGENT" = "true" '''
