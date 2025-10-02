@@ -11,7 +11,8 @@ sandbox_mode = "workspace-write" # Make cwd writable
 network_access = true # Allow network access
 
 [shell_environment_policy]
-set = { AGENT = "true", GIT_CONFIG_GLOBAL = "~/.config/git/agent.config" } # Use agent git config
+# NOTE: Codex doesn't support variable expansion in the config file yet: https://github.com/openai/codex/issues/2680
+set = { AGENT = "true", GIT_CONFIG_GLOBAL = "${HOME}/.config/git/agent.config" } # Use agent git config
 
 # Tools
 
