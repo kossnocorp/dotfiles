@@ -11,7 +11,7 @@ sandbox_mode = "workspace-write" # Make cwd writable
 network_access = true # Allow network access
 
 [shell_environment_policy]
-set = { GIT_CONFIG_GLOBAL = "~/.config/git/agent.config" } # Use agent git config
+set = { AGENT = "true", GIT_CONFIG_GLOBAL = "~/.config/git/agent.config" } # Use agent git config
 
 # Tools
 
