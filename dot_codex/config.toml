@@ -1,6 +1,7 @@
 # Model
 model = "gpt-5-codex"
-model_reasoning_effort = "high"
+# TODO: Disable for now, to see if it helps with context rot
+# model_reasoning_effort = "high"
 model_reasoning_summary = "detailed"
 
 # Sandbox
