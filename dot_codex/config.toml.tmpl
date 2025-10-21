@@ -1,3 +1,5 @@
+{{- $isLinux := eq .chezmoi.os "linux" -}}
+{{- $isDevContainer := or (eq .chezmoi.username "vscode") (eq .chezmoi.username "mthshp") -}}
 # Model
 model = "gpt-5-codex"
 # TODO: Disable for now, to see if it helps with context rot
@@ -6,7 +8,11 @@ model_reasoning_summary = "detailed"
 
 # Sandbox
 
+{{- if and $isLinux $isDevContainer }}
+sandbox_mode = "danger-full-access" # Full access in dev containers
+{{- else }}
 sandbox_mode = "workspace-write" # Make cwd writable
+{{- end }}
 
 [sandbox_workspace_write]
 network_access = true        # Allow network access
