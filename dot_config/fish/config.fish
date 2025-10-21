@@ -12,7 +12,12 @@ end
 
 fish_add_path "$HOME/.local/bin"
 
+# Env vars
+
+set export EDITOR vim
+
 # Homebrew
+
 if test (uname) = Darwin
   eval (/opt/homebrew/bin/brew shellenv)
 end
