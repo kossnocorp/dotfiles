@@ -14,7 +14,7 @@ fish_add_path "$HOME/.local/bin"
 
 # Env vars
 
-set export EDITOR vim
+set -gx EDITOR vim
 
 # Homebrew
 
@@ -47,6 +47,12 @@ end
 # Test if running in a dev container
 if test (whoami) = "vscode"
   envsource $HOME/.config/mothership/.env
+end
+
+# 1Password
+
+if test (uname) = Darwin
+  set -gx SSH_AUTH_SOCK "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 end
 
 # Aliases
