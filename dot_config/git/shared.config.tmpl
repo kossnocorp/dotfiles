@@ -11,11 +11,11 @@
 [gpg "ssh"]
   allowedSignersFile = "./allowed_signers"
   {{- if eq .chezmoi.os "windows" }}
-  program = "C:/Users/koss/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+  program = "C:/Users/koss/AppData/Local/Microsoft/WindowsApps/op-ssh-sign.exe"
   {{- else if eq .chezmoi.os "darwin" }}
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
   {{- else if and (eq .chezmoi.os "linux") (ne .chezmoi.username "vscode") }}
-  program = "/mnt/c/Users/koss/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
+  program = "/mnt/c/Users/koss/AppData/Local/Microsoft/WindowsApps/op-ssh-sign-wsl.exe"
   {{- end }}
 
 [commit]
