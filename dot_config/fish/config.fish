@@ -11,6 +11,7 @@ end
 # Path
 
 fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/.scripts"
 
 # Env vars
 
@@ -104,3 +105,6 @@ alias chu "chezmoi update"
 
 # Turbo
 alias t "pnpm exec turbo"
+
+# YOLO
+alias yoc "yolo.sh claude"
