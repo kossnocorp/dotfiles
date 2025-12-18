@@ -13,6 +13,7 @@ case "$cmd" in
     ;;
   opencode|o)
     exec OPENCODE_PERMISSION=allow opencode --dangerously-bypass-approvals-and-sandbox
+    ;;
   *)
     echo "Usage: $0 {claude|cl|c|codex|co|opencode|o}"
     exit 1
