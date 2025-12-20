@@ -16,6 +16,7 @@ fish_add_path "$HOME/.scripts"
 # Env vars
 
 set -gx EDITOR vim
+set -gx SHELL (which fish)
 
 # Homebrew
 
