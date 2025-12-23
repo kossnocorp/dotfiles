@@ -59,32 +59,48 @@ end
 
 # Aliases
 
-# Git
-alias gst "git status"
+### Git
+#--- status
+alias gs "git status"
+#--- push
 alias gp "git push"
+#--- pull
 alias glr "git pull --rebase"
+#--- commit
 alias gc "git commit"
+alias gcm "git commit -m"
+alias gca "git commit --amend"
+#--- checkout
 alias gco "git checkout"
 alias gcob "git checkout -b"
+#--- add
+alias ga "git add"
 alias gaa "git add ."
-alias grh "git reset --hard"
-alias grs "git reset HEAD~1"
+#--- reset
+alias grsh "git reset --hard"
+alias grs1 "git reset HEAD~1"
+#--- diff
 alias gd "git diff"
-alias gr2 "git rebase -i HEAD~2"
-alias gr3 "git rebase -i HEAD~3"
-alias gr4 "git rebase -i HEAD~4"
-alias gr5 "git rebase -i HEAD~5"
+alias gds "git diff --staged"
+#--- rebase
+alias grb "git rebase"
+alias grb2 "git rebase -i HEAD~2"
+alias grb3 "git rebase -i HEAD~3"
+alias grb4 "git rebase -i HEAD~4"
+alias grb5 "git rebase -i HEAD~5"
+#--- branch
 alias gb "git branch"
 alias gbr "git branch -r"
+alias gbd "git branch -d"
 
-# mise
+## mise
 alias m "mise"
 alias mi "mise install"
 alias mu "mise update"
 alias mus "mise self-update"
 alias me "mise exec"
 
-# pnpm
+## pnpm
 alias p "pnpm"
 alias pi "pnpm install"
 alias pa "pnpm add"
@@ -93,7 +109,7 @@ alias pr "pnpm remove"
 alias pe "pnpm exec"
 alias px "pnpx"
 
-# Cargo
+## Cargo
 alias c "cargo"
 alias ci "cargo install"
 alias ca "cargo add"
@@ -101,11 +117,11 @@ alias cr "cargo remove"
 alias cb "cargo build"
 alias ct "cargo test"
 
-# Chezmoi
+## Chezmoi
 alias chu "chezmoi update"
 
-# Turbo
+## Turbo
 alias t "pnpm exec turbo"
 
-# YOLO
+## YOLO
 alias yoc "yolo.sh claude"
