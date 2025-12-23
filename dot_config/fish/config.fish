@@ -57,6 +57,13 @@ if test (uname) = Darwin
   set -gx SSH_AUTH_SOCK "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 end
 
+# LLVM
+
+if test (uname) = Darwin
+  set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
+  set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
+end
+
 # Aliases
 
 ### Git
