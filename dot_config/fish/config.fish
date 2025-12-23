@@ -92,6 +92,9 @@ alias grb5 "git rebase -i HEAD~5"
 alias gb "git branch"
 alias gbr "git branch -r"
 alias gbd "git branch -d"
+#--- stash
+alias gsh "git stash"
+alias gshp "git stash pop"
 
 ## mise
 alias m "mise"
