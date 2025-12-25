@@ -66,9 +66,9 @@ end
 
 # Git
 
-# If we're connected over ssh, use the forward config
+# If we're connected over ssh, use the remote config
 if set -q SSH_CONNECTION
-  set -x GIT_CONFIG_GLOBAL /home/koss/.config/git/forward.config
+  set -x GIT_CONFIG_GLOBAL /home/koss/.config/git/remote.config
 end
 
 # Aliases
