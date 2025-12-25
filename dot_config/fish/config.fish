@@ -66,8 +66,9 @@ end
 
 # Git
 
-# If we're connected over ssh, use the remote config
-if set -q SSH_CONNECTION
+# If we're connected over ssh, use the remote config unless GIT_CONFIG_GLOBAL
+# is already set.
+if set -q SSH_CONNECTION; and not set -q GIT_CONFIG_GLOBAL
   set -x GIT_CONFIG_GLOBAL /home/koss/.config/git/remote.config
 end
 
