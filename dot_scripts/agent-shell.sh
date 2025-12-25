@@ -7,6 +7,11 @@ set -eo pipefail
 echo -e "⚡️ Starting agent shell environment\n"
 
 export AGENT="true"
-export GIT_CONFIG_GLOBAL="${HOME}/.config/git/agent.config"
+
+if [[ "$GIT_CONFIG_GLOBAL" == *"forward.config"* ]]; then
+  export GIT_CONFIG_GLOBAL="${HOME}/.config/git/forward_agent.config"
+else
+  export GIT_CONFIG_GLOBAL="${HOME}/.config/git/agent.config"
+fi
 
 "$SHELL"
