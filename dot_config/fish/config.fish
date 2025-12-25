@@ -143,3 +143,6 @@ alias t "pnpm exec turbo"
 
 ## YOLO
 alias yoc "yolo.sh claude"
+
+## Agent shell
+alias ash "agent-shell.sh"
