@@ -64,6 +64,13 @@ if test (uname) = Darwin
   set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
 end
 
+# Git
+
+# If we're connected over ssh, use the forward config
+if set -q SSH_CONNECTION
+  set -x GIT_CONFIG_GLOBAL /home/koss/.config/git/forward.config
+end
+
 # Aliases
 
 ### Git
