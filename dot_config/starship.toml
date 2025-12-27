@@ -8,10 +8,12 @@ $shell\
 $character"""
 
 [custom.devcontainer]
+shell = ["sh"]
 when = ''' test "$DEVCONTAINER" = "true" '''
 format = "[󰆧](fg:red dimmed)  "
 
 [custom.agent]
+shell = ["sh"]
 when = ''' test "$AGENT" = "true" '''
 format = "[󱜙](fg:yellow)  "
 
