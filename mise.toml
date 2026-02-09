@@ -1,3 +1,8 @@
 [tools]
 age = "latest"
 chezmoi = "latest"
+fnox = "latest"
+opencode = "latest"
+
+[settings]
+lockfile = true
