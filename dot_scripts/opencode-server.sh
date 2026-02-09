@@ -34,7 +34,7 @@ service_exec() {
   export PATH="$HOME/.local/bin:$HOME/.scripts:$PATH"
 
   # Activate mise
-  mise activate bash | source
+  eval "$(mise activate bash)"
 
   # Start the server
   opencode serve --port 4096 --hostname 0.0.0.0 --cors $PC_HOST
