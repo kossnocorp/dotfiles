@@ -37,7 +37,7 @@ service_exec() {
   eval "$(mise activate bash)"
 
   # Start the server
-  opencode serve --port 4096 --hostname 127.0.0.1 --cors $PC_HOST
+  opencode serve --port 6904 --hostname 127.0.0.1 --cors $PC_HOST
 }
 
 usage() {
