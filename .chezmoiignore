@@ -4,3 +4,4 @@
 !.chezmoiscripts/**
 !.ssh/**
 !.scripts/**
+!.git-hooks/**

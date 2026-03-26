@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+MSG_FILE="$1"
+EMAIL=$(git config user.email)
+
+if [ "$EMAIL" = "agent@nocorp.me" ]; then
+	git interpret-trailers --in-place \
+		--if-exists doNothing \
+		--trailer "Co-authored-by: Sasha Koss <koss@nocorp.me>" \
+		"$MSG_FILE"
+fi
