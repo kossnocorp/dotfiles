@@ -1,1 +1,2 @@
-# Add chezmoi configuration here...
+[secret]
+command = "fnox"

@@ -2,3 +2,9 @@
 Host *
   IdentityAgent ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 {{- end }}
+
+Host {{ secret "get" "PC_HOST_ALIAS" }}
+  HostName {{ secret "get" "PC_HOST_NAME" }}
+  User {{ secret "get" "PC_SSH_USER" }}
+  Port {{ secret "get" "PC_SSH_PORT" }}
+  ForwardAgent yes
