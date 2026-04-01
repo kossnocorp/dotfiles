@@ -15,6 +15,7 @@ fish_add_path "$HOME/.scripts"
 
 # Env vars
 
+
 set -gx EDITOR vim
 set -gx SHELL (which fish)
 
@@ -56,6 +57,10 @@ end
 if test (uname) = Darwin
   set -gx SSH_AUTH_SOCK "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 end
+
+# fnox
+
+set FNOX_AGE_KEY "$(cat ~/.config/fnox/age.txt | grep "AGE-SECRET-KEY")"
 
 # LLVM
 
