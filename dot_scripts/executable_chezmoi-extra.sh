@@ -23,9 +23,7 @@ sync_command() {
 		exit 1
 	fi
 
-	if output=rsync -av --delete --exclude .git "$DOTFILES_DIR" "$CHEZMOI_SOURCE_DIR" >&2; then
-		echo "🟢 Sync successful"
-	else
+	if ! output=$(rsync -av --delete --exclude .git "$PWD" "$CHEZMOI_SOURCE_DIR" 2>&1); then
 		echo "🔴 rsync failed"
 		echo "--- Output ------------------------------------------"
 		echo "$output"

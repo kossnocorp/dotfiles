@@ -141,6 +141,8 @@ alias ct "cargo test"
 
 ## Chezmoi
 alias chu "chezmoi update"
+alias ce "chezmoi-extra.sh"
+alias ces "chezmoi-extra.sh sync"
 
 ## Turbo
 alias t "pnpm exec turbo"
