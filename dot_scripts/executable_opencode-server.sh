@@ -6,10 +6,10 @@
 
 set -euo pipefail
 
-
 #region Commands
 
 SERVICE_NAME="opencode"
+SERVER_PORT=6904
 
 start_server() {
 	sudo systemctl start "$SERVICE_NAME"
@@ -20,29 +20,34 @@ stop_server() {
 }
 
 restart_server() {
-  sudo systemctl daemon-reload
+	sudo systemctl daemon-reload
 	sudo systemctl restart "$SERVICE_NAME"
 }
 
 update_server() {
-  mise use -g opencode@latest
+	mise use -g opencode@latest
 	restart_server
 }
 
+attach_server() {
+	local dir="${1:-.}"
+	opencode attach "http://localhost:$SERVER_PORT" --dir "$dir"
+}
+
 service_exec() {
-  # Add all bin paths
-  export PATH="$HOME/.local/bin:$HOME/.scripts:$PATH"
+	# Add all bin paths
+	export PATH="$HOME/.local/bin:$HOME/.scripts:$PATH"
 
-  # Activate mise
-  eval "$(mise activate bash)"
+	# Activate mise
+	eval "$(mise activate bash)"
 
-  # Start the server
-  opencode serve --port 6904 --hostname 127.0.0.1 --cors $OPENCODE_CORS
+	# Start the server
+	opencode serve --port "$SERVER_PORT" --hostname 127.0.0.1 --cors $OPENCODE_CORS
 }
 
 usage() {
 	cat <<'EOF'
-Usage: opencode-server.sh start|stop|restart|update|exec
+Usage: opencode-server.sh start|stop|restart|update|exec|attach
 
 Commands:
   start    Start the OpenCode service
@@ -50,11 +55,11 @@ Commands:
   restart  Restart the OpenCode service
   update   Updates OpenCode and restarts the service
   exec     Run the OpenCode server directly (for the service file)
+  attach   Attach to the running OpenCode server
 EOF
 }
 
 #endregion
-
 
 #region Match command
 
@@ -72,8 +77,11 @@ update)
 	update_server
 	;;
 exec)
-  service_exec
-  ;;
+	service_exec
+	;;
+attach)
+	attach_server "${@:2}"
+	;;
 *)
 	usage
 	exit 1

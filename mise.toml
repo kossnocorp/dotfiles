@@ -3,6 +3,7 @@ age = "latest"
 chezmoi = "latest"
 fnox = "latest"
 opencode = "latest"
+shfmt = "latest"
 
 [settings]
 lockfile = true
