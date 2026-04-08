@@ -3,6 +3,19 @@
     "*.config": "properties"
   },
   "[shellscript]": {
-    "editor.defaultFormatter": "mkhl.shfmt"
+    "editor.defaultFormatter": "mkhl.shfmt",
+    "editor.indentSize": "tabSize",
+    "editor.tabSize": 4
+  },
+  "[fish]": {
+    "editor.defaultFormatter": "bmalehorn.vscode-fish",
+    "editor.indentSize": "tabSize",
+    "editor.tabSize": 4
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

@@ -97,6 +97,14 @@ url = "https://github.com/anomalyco/opencode/releases/download/v1.1.53/opencode-
 checksum = "sha256:49aa487838901956b6cd9eafc87b752d10100f4d83a67d307a11aa33a2fdc498"
 url = "https://github.com/anomalyco/opencode/releases/download/v1.1.53/opencode-windows-x64.zip"
 
+[[tools.oxfmt]]
+version = "0.40.0"
+backend = "npm:oxfmt"
+
+[[tools.prettier]]
+version = "3.8.1"
+backend = "npm:prettier"
+
 [[tools.shfmt]]
 version = "3.13.0"
 backend = "aqua:mvdan/sh"
