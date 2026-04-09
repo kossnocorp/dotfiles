@@ -22,6 +22,8 @@ for _, plugin in ipairs(disabled) do
     vim.g["loaded_" .. plugin] = 1
 end
 
+vim.opt.colorcolumn = "80"
+
 -- -- Map <leader> to <space>
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 -- vim.g.mapleader = "<Space>"
