@@ -48,3 +48,6 @@ alias gbd "git branch -D"
 # stash
 alias gsh "git stash"
 alias gshp "git stash pop"
+
+# reset
+alias grh "git reset --hard"
