@@ -1,4 +1,5 @@
 -- Native editor plugins (not VS Code)
+
 if vim.g.vscode then
   return {}
 end
@@ -8,36 +9,44 @@ return {
 
   -- LSP
 
-  "neovim/nvim-lspconfig",
+  {
+    name = "nvim-lspconfig",
+    src = "https://github.com/neovim/nvim-lspconfig",
+    lazy = "manual",
+  },
 
   {
-    'nvim-treesitter/nvim-treesitter',
+    name = "nvim-treesitter",
+    src = "https://github.com/nvim-treesitter/nvim-treesitter",
     lazy = false,
-    build = ':TSUpdate'
   },
 
   {
-    "mason-org/mason.nvim",
-    opts = {}
+    name = "mason.nvim",
+    src = "https://github.com/mason-org/mason.nvim",
+    lazy = "manual",
+    setup = function()
+      require("mason").setup({})
+    end,
   },
 
   {
-    "mason-org/mason-lspconfig.nvim",
-    opts = {},
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      {
-        "mason-org/mason.nvim", opts = {}
-      },
-    },
+    name = "mason-lspconfig.nvim",
+    src = "https://github.com/mason-org/mason-lspconfig.nvim",
+    lazy = "manual",
+    deps = { "mason.nvim", "nvim-lspconfig" },
+    setup = function()
+      require("mason-lspconfig").setup({})
+    end,
   },
 
   -- Rust
 
   {
-    'mrcjkb/rustaceanvim',
-    version = '^8',
-    lazy = false, -- This plugin is already lazy
+    name = "rustaceanvim",
+    src = "https://github.com/mrcjkb/rustaceanvim",
+    version = vim.version.range("8"),
+    lazy = false,
   },
 
   --#endregion
@@ -45,15 +54,22 @@ return {
   --#region Navigation ---------------------------------------------------------
 
   {
-    'nvim-telescope/telescope.nvim',
-    version = '*',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'make'
-      },
-    }
+    name = "telescope.nvim",
+    src = "https://github.com/nvim-telescope/telescope.nvim",
+    lazy = "manual",
+    deps = { "plenary.nvim", "telescope-fzf-native.nvim" },
+  },
+
+  {
+    name = "plenary.nvim",
+    src = "https://github.com/nvim-lua/plenary.nvim",
+    lazy = "manual",
+  },
+
+  {
+    name = "telescope-fzf-native.nvim",
+    src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+    lazy = "manual",
   },
 
   --#endregion
@@ -61,13 +77,27 @@ return {
   --#region Tests --------------------------------------------------------------
 
   {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter"
-    }
+    name = "neotest",
+    src = "https://github.com/nvim-neotest/neotest",
+    lazy = "manual",
+    deps = {
+      "nvim-nio",
+      "plenary.nvim",
+      "FixCursorHold.nvim",
+      "nvim-treesitter",
+    },
+  },
+
+  {
+    name = "nvim-nio",
+    src = "https://github.com/nvim-neotest/nvim-nio",
+    lazy = "manual",
+  },
+
+  {
+    name = "FixCursorHold.nvim",
+    src = "https://github.com/antoinemadec/FixCursorHold.nvim",
+    lazy = "manual",
   },
 
   --#endregion

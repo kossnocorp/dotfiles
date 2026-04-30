@@ -29,7 +29,7 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 -- vim.g.mapleader = "<Space>"
 -- vim.g.maplocalleader = "<Space>"
 
-require("config.lazy")
+require("config.pack")
 
 if vim.g.vscode then
     -- VS Code Neovim extension configuration

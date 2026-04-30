@@ -2,38 +2,35 @@
 
 return {
   {
-    "kylechui/nvim-surround",
-    version = "^4.0.0",
-    event = "VeryLazy",
+    name = "nvim-surround",
+    src = "https://github.com/kylechui/nvim-surround",
+    lazy = "defer",
+    setup = function()
+      require("nvim-surround").setup({})
+    end,
   },
-
   {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    opts = {
-      label = {
-        after = { 0, 0 },
-      },
-      highlight = {
-        backdrop = false
-      },
-      modes = {
-        char = {
-          multi_line = false,
-          jump_labels = true,
-          highlight = {
-            backdrop = false
-          }
+    name = "flash.nvim",
+    src = "https://github.com/folke/flash.nvim",
+    lazy = "manual",
+    setup = function()
+      require("flash").setup({
+        label = {
+          after = { 0, 0 },
         },
-      },
-    },
-    keys = {
-      {
-        "<Space>",
-        mode = { "n", "x", "o" },
-        function() require("flash").jump() end,
-        desc = "Flash"
-      },
-    },
-  }
+        highlight = {
+          backdrop = false,
+        },
+        modes = {
+          char = {
+            multi_line = false,
+            jump_labels = true,
+            highlight = {
+              backdrop = false,
+            },
+          },
+        },
+      })
+    end,
+  },
 }
