@@ -72,6 +72,29 @@ return {
     lazy = "manual",
   },
 
+  {
+    name = "neo-tree.nvim",
+    src = "https://github.com/nvim-neo-tree/neo-tree.nvim",
+    version = vim.version.range("3"),
+    lazy = "manual",
+    deps = { "plenary.nvim", "nui.nvim", "nvim-web-devicons" },
+    setup = function()
+      require("neo-tree").setup({})
+    end,
+  },
+
+  {
+    name = "nui.nvim",
+    src = "https://github.com/MunifTanjim/nui.nvim",
+    lazy = "manual",
+  },
+
+  {
+    name = "nvim-web-devicons",
+    src = "https://github.com/nvim-tree/nvim-web-devicons",
+    lazy = "manual",
+  },
+
   --#endregion
 
   --#region Tests --------------------------------------------------------------

@@ -9,6 +9,7 @@ return {
       require("nvim-surround").setup({})
     end,
   },
+
   {
     name = "flash.nvim",
     src = "https://github.com/folke/flash.nvim",
