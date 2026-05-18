@@ -8,40 +8,12 @@ function envsource
     end
 end
 
-# Path
-
-fish_add_path "$HOME/.local/bin"
-fish_add_path "$HOME/.scripts"
-
-# Env vars
-
-set -gx EDITOR vim
-set -gx SHELL (which fish)
-
-# Homebrew
-
-if test (uname) = Darwin
-    eval (/opt/homebrew/bin/brew shellenv)
-end
-
-# mise-en-place
-
-if type -q mise
-    if status is-interactive
-        mise activate fish | source
-    else
-        mise activate fish --shims | source
-    end
-else
-    echo " mise-en-place not found, skipping..."
-end
-
 # Starship
 
 if type -q starship
     starship init fish | source
 else
-    echo " Starship not found, skipping..."
+    echo "🟡 Starship not found, skipping..."
 end
 
 # Mothership
