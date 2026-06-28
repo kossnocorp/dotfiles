@@ -56,3 +56,6 @@ alias gbd "git branch -D"
 # stash
 alias gsh "git stash"
 alias gshp "git stash pop"
+
+# cherry-pick
+alias gcp "git cherry-pick"
