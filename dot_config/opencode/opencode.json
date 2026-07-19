@@ -9,5 +9,16 @@
     "codesearch": "allow",
     "doom_loop": "ask",
     "external_directory": "ask"
+  },
+  "provider": {
+    "openai": {
+      // NOTE: Workaround for: https://github.com/anomalyco/opencode/issues/29548
+      // TODO: Remove and try when the issue fix is released.
+      "options": {
+        "headerTimeout": 60000,
+        "timeout": 600000,
+        "chunkTimeout": 60000
+      }
+    }
   }
 }
