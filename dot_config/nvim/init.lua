@@ -36,4 +36,9 @@ if vim.g.vscode then
     -- See: https://github.com/vscode-neovim/vscode-neovim
 else
     -- Ordinary Neovim configuration
+
+    vim.o.expandtab = true   -- Expand tabs to spaces
+    vim.o.smartindent = true -- Make it syntax aware
+    vim.o.tabstop = 2        -- Spaces per tab
+    vim.o.shiftwidth = 2     -- Spaces per level
 end
