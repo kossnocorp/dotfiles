@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "dot_config/nvim"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.config": "properties"
+		}
+	}
+}
