@@ -16,6 +16,12 @@ url = "https://github.com/FiloSottile/age/releases/download/v1.3.1/age-v1.3.1-li
 checksum = "sha256:01120ea2cbf0463d4c6bd767f99f3271bbed1cdc8a9aa718a76ba1fe4f01998b"
 url = "https://github.com/FiloSottile/age/releases/download/v1.3.1/age-v1.3.1-darwin-arm64.tar.gz"
 
+[tools.age."platforms.macos-x64"]
+checksum = "sha256:2b233301ad21ab7b1eabd9ae1198a164005fa4928fcdd745d47c39f8593209d7"
+url = "https://github.com/FiloSottile/age/releases/download/v1.3.1/age-v1.3.1-darwin-amd64.tar.gz"
+url_api = "https://api.github.com/repos/FiloSottile/age/releases/assets/343881260"
+provenance = "github-attestations"
+
 [tools.age."platforms.windows-x64"]
 checksum = "sha256:c56e8ce22f7e80cb85ad946cc82d198767b056366201d3e1a2b93d865be38154"
 url = "https://github.com/FiloSottile/age/releases/download/v1.3.1/age-v1.3.1-windows-amd64.zip"
@@ -127,3 +133,28 @@ backend = "npm:prettier"
 [[tools.shfmt]]
 version = "3.13.0"
 backend = "aqua:mvdan/sh"
+
+[tools.shfmt."platforms.linux-arm64"]
+checksum = "sha256:2091a31afd47742051a77bf7cfd175533ab07e924c20ef3151cd108fa1cab5b0"
+url = "https://github.com/mvdan/sh/releases/download/v3.13.0/shfmt_v3.13.0_linux_arm64"
+url_api = "https://api.github.com/repos/mvdan/sh/releases/assets/370019372"
+
+[tools.shfmt."platforms.linux-x64"]
+checksum = "sha256:70aa99784703a8d6569bbf0b1e43e1a91906a4166bf1a79de42050a6d0de7551"
+url = "https://github.com/mvdan/sh/releases/download/v3.13.0/shfmt_v3.13.0_linux_amd64"
+url_api = "https://api.github.com/repos/mvdan/sh/releases/assets/370019380"
+
+[tools.shfmt."platforms.macos-arm64"]
+checksum = "sha256:650970603b5946dc6041836ddcfa7a19d99b5da885e4687f64575508e99cf718"
+url = "https://github.com/mvdan/sh/releases/download/v3.13.0/shfmt_v3.13.0_darwin_arm64"
+url_api = "https://api.github.com/repos/mvdan/sh/releases/assets/370019390"
+
+[tools.shfmt."platforms.macos-x64"]
+checksum = "sha256:b6890a0009abf71d36d7c536ad56e3132c547ceb77cd5d5ee62b3469ab4e9417"
+url = "https://github.com/mvdan/sh/releases/download/v3.13.0/shfmt_v3.13.0_darwin_amd64"
+url_api = "https://api.github.com/repos/mvdan/sh/releases/assets/370019393"
+
+[tools.shfmt."platforms.windows-x64"]
+checksum = "sha256:62241aaf6b0ca236f8625d8892784b73fa67ad40bc677a1ad1a64ae395f6a7d5"
+url = "https://github.com/mvdan/sh/releases/download/v3.13.0/shfmt_v3.13.0_windows_amd64.exe"
+url_api = "https://api.github.com/repos/mvdan/sh/releases/assets/370019338"

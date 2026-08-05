@@ -3,7 +3,6 @@ age = "latest"
 chezmoi = "latest"
 fnox = "latest"
 lua = "latest"
-opencode = "latest"
 prettier = "latest"
 shfmt = "latest"
 
