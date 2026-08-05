@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ "$1" == "0000000000000000000000000000000000000000" ]]; then
+	repo_dir=$(git rev-parse --show-toplevel) || exit
+	setup_script="$repo_dir/scripts/setup-worktree.sh"
+
+	if [[ -f "$setup_script" ]]; then
+		(cd "$repo_dir" && bash "$setup_script")
+	fi
+fi
