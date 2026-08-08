@@ -8,3 +8,6 @@ shfmt = "latest"
 
 [settings]
 lockfile = true
+
+[tasks.apply]
+run = "chezmoi apply"
