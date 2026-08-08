@@ -2,6 +2,7 @@ format = """
 $all\
 ${custom.devcontainer}\
 ${custom.agent}\
+${custom.worktree}\
 $container\
 $netns\
 $shell\
@@ -16,6 +17,12 @@ format = "[󰆧](fg:red dimmed)  "
 shell = ["sh"]
 when = ''' test "$AGENT" = "true" '''
 format = "[󱜙](fg:yellow)  "
+
+[custom.worktree]
+shell = ["sh"]
+when = ''' test -n "$ORCHARDIST_WORKTREE_NAME" '''
+command = ''' printf '%s %s' "${ORCHARDIST_WORKTREE_SYMBOL}" "$ORCHARDIST_WORKTREE_NAME" '''
+format = "[$output](fg:cyan) "
 
 [container]
 disabled = true
