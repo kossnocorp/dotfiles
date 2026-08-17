@@ -22,13 +22,18 @@ fi
 code="$*"
 count=1
 
+trap 'echo; echo "🛑 Interrupted"; exit 130' INT
+trap 'exit 143' TERM
+
 echo "$code"
 
 while true; do
 	echo "--- Run #$count"
+
 	bash -c "$code"
-	echo "-----------------------------------------------------"
 	status=$?
+
+	echo "-----------------------------------------------------"
 
 	if ((status != 0)); then
 		echo "🛑 Failed on run #$count with exit code $status"
