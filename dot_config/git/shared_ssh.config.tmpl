@@ -1,16 +1,24 @@
+{{- $isLinux := eq .chezmoi.os "linux" -}}
+{{- $isWsl := and $isLinux (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+{{- $isMac := eq .chezmoi.os "darwin" -}}
+{{- $isWindows := eq .chezmoi.os "windows" -}}
+{{- $isDevContainer := eq .chezmoi.username "vscode" -}}
+
 [core]
-{{- if eq .chezmoi.os "windows" }}
+{{- if $isWindows -}}
   sshCommand = "C:/Windows/System32/OpenSSH/ssh.exe"
-{{- else if and (eq .chezmoi.os "linux") (ne .chezmoi.username "vscode") }}
+{{- else if and $isLinux (and $isWsl (not $isDevContainer)) -}}
   sshCommand = "ssh.exe"
 {{- end }}
 
 [gpg "ssh"]
   allowedSignersFile = "./allowed_signers"
-  {{- if eq .chezmoi.os "windows" }}
+  {{ if $isWindows -}}
   program = "C:/Users/koss/AppData/Local/Microsoft/WindowsApps/op-ssh-sign.exe"
-  {{- else if eq .chezmoi.os "darwin" }}
+  {{- else if $isMac -}}
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-  {{- else if and (eq .chezmoi.os "linux") (ne .chezmoi.username "vscode") }}
+  {{- else if and $isWsl (not $isDevContainer) -}}
   program = "/mnt/c/Users/koss/AppData/Local/Microsoft/WindowsApps/op-ssh-sign-wsl.exe"
+  {{- else if and $isLinux (not $isDevContainer) -}}
+  program = "/opt/1Password/op-ssh-sign"
   {{- end }}

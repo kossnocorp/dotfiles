@@ -1,10 +1,19 @@
-{{- if eq .chezmoi.os "darwin" }}
+{{- $isLinux := eq .chezmoi.os "linux" -}}
+{{- $isWsl := and $isLinux (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+{{- $isMac := eq .chezmoi.os "darwin" -}}
+
+{{- if $isMac }}
 Host *
   IdentityAgent ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-{{- end }}
 
 Host {{ secret "get" "PC_HOST_ALIAS" }}
   HostName {{ secret "get" "PC_HOST_NAME" }}
   User {{ secret "get" "PC_SSH_USER" }}
   Port {{ secret "get" "PC_SSH_PORT" }}
   ForwardAgent yes
+{{- end }}
+
+{{- if and $isLinux (not $isWsl) -}}
+Host *
+  IdentityAgent ~/.1password/agent.sock
+{{- end }}
