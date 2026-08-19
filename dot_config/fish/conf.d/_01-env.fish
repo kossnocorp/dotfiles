@@ -1,4 +1,4 @@
 # Env vars
 
-set -gx EDITOR vim
+set -gx EDITOR nvim
 set -gx SHELL (which fish)
