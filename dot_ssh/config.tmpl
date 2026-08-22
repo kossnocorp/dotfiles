@@ -11,6 +11,12 @@ Host {{ secret "get" "PC_HOST_ALIAS" }}
   User {{ secret "get" "PC_SSH_USER" }}
   Port {{ secret "get" "PC_SSH_PORT" }}
   ForwardAgent yes
+
+Host {{ secret "get" "PC_HOST_ALIAS_WSL" }}
+  HostName {{ secret "get" "PC_HOST_NAME" }}
+  User {{ secret "get" "PC_SSH_USER" }}
+  Port {{ secret "get" "PC_SSH_PORT_WSL" }}
+  ForwardAgent yes
 {{- end }}
 
 {{- if and $isLinux (not $isWsl) -}}
